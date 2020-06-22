@@ -8,8 +8,8 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Coffee {
     @JsonProperty("id")
     private UUID id;
@@ -29,5 +29,4 @@ public class Coffee {
     public BigDecimal getAmount() {
         return price.multiply(BigDecimal.valueOf(quantity));
     }
-
 }
