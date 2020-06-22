@@ -35,4 +35,3 @@ Response:
 
 ## Maintainers
 [Jorge Avelar](mailto:jorge.avelar@summa.com)
-river: json-file
