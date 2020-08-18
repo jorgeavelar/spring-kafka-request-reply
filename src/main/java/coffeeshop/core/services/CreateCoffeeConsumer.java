@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class CreateCoffeeConsumer {
-	 @KafkaListener(topics = "${spring.kafka.request-topic}")
-	 @SendTo
-	  public Coffee listen(Coffee coffee) {
-	     coffee.setId(UUID.randomUUID());
-		 return coffee;
-	  }
+public class CreateCoffeeConsumer implements ConsumerListener<Coffee> {
+    @Override
+    @KafkaListener(topics = "${spring.kafka.request-topic}")
+    @SendTo
+    public Coffee consume(Coffee coffee) {
+        coffee.setId(UUID.randomUUID());
+        return coffee;
+    }
 }

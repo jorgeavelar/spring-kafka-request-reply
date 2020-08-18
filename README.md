@@ -33,5 +33,12 @@ Response:
 }
 ```
 
+
+## Monitoring application:
+
+```
+curl -X GET http://localhost:8080/monitoring -H "Content-Type: application/json" | python -m json.tool
+```
+
 ## Maintainers
 [Jorge Avelar](mailto:jorge.avelar@summa.com)
